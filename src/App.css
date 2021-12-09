@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.sidebar-toggle{
+  height: 0rem;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+
+.show-sidebar{
+  height:4rem;
+}
