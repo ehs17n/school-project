@@ -8,7 +8,7 @@ function CardList(props) {
         <div className="card-list">
 
             {props.students.map(student => (
-                <Card key={student.id} student={student} />
+                <Card key={student.id} student={student}  onCLickDeleteStudent={props.onCLickDeleteStudent}  />
             ))}
 
         

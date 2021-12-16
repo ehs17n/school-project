@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css'
 
-function Card({student}) {
+function Card({student, onCLickDeleteStudent}) {
     return (
         <div>
              <div className="card-container">
@@ -9,6 +9,7 @@ function Card({student}) {
                 <h1> {student.name} </h1>
                 <h2> {student.FamilyName} </h2>
                 <h2> {student.age} </h2>
+                <button onClick={onCLickDeleteStudent(student)} >delete student </button>
             
             </div>
 

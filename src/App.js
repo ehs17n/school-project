@@ -6,8 +6,8 @@ import './App.css'
 
 function Function() {
     const [students, setStudents] = useState([
-        { name: "Meowsalot", FamilyName: "cat", age: "5", id: 123456789 },
-        { name: "Barksalot", FamilyName: "dog", age: "3", id: 987654321 },
+        { name: "mohammad", FamilyName: "jalaly", age: "20", id: 123456789 },
+        { name: "mehrshad", FamilyName: "bagherzade", age: "19", id: 987654321 },
       ])
 
       const [search, setSearch] = useState("")
@@ -43,9 +43,10 @@ function Function() {
       }
       
      
-      const hidden = document.querySelector('.hid')
+     
 
       const onClickAddNewStudent = () => {
+        const hidden = document.querySelector('.hid')
 
         hidden.classList.toggle("show-sidebar");
 
@@ -57,11 +58,19 @@ function Function() {
         setSearch(e.target.value)
       }
 
-     const onCLickDeleteStudent = (CompanyName, sid) =>{
-                const items = {students};
-            const j = items[name].findIndex(item => item.FamilyName === sid);
+     const onCLickDeleteStudent = (std) =>{
 
-            items[name].splice([j], 1);
+      return students.filter(student=> student.id !== std.id)
+
+
+       
+
+            // const index = students.findIndex((student) => student.id === contactId);
+
+            // students.splice(index, 1);
+
+            // const j = items[name].findIndex(item => item.FamilyName === sid);
+
 
             // setStudents({
             //   myrecords: items
@@ -76,12 +85,11 @@ function Function() {
 
             <button onClick={onClickAddNewStudent}>add new student</button>
 
-            <button   onClick={onCLickDeleteStudent}>   delete student </button>
 
             <div className="hid sidebar-toggle">
-              <AddPetForm setPets={setStudents} />
+              <AddPetForm setPets={setStudents}  />
             </div>
-            <CardList students={filteredMonster}/>
+            <CardList students={filteredMonster} onCLickDeleteStudent={onCLickDeleteStudent} />
         </div>
     )
 }
